@@ -13,6 +13,7 @@ public class Program {
 		Function function = new Function(ConverterService.converterString(fString));
 		
 		System.out.println(Calculation.bisectionMethod(0.5, 1.0, 0.001, function, true));
+		System.out.println(Calculation.falsePosition(0.5, 1.0, 0.001, function, true));
 		
 		
 	}
