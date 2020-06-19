@@ -1,23 +1,20 @@
 package application;
 
-import java.util.List;
-
+import entities.Calculation;
 import entities.Function;
-import entities.Polynomial;
 import service.ConverterService;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		String fString = "4.0x3.0 -1.0x2.0 +6.0x0.0";
-		Function function = new Function(ConverterService.converterString(fString));
-		System.out.println(function.toString());
-		List<Polynomial> list =  ConverterService.toDerive(function.getPolynomialsList());
-		Function function2 = new Function(list);
-		System.out.println(function2.toString());
+		String fString = "1.0x9.0 -9.0x1.0 +5.0x0.0";
 		
-		System.out.println("F(0) = " + function.functionCalculation(0.0));
+		Function function = new Function(ConverterService.converterString(fString));
+		
+		System.out.println(Calculation.bisectionMethod(0.5, 1.0, 0.001, function, true));
+		
+		
 	}
 
 }

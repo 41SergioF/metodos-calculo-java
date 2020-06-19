@@ -34,4 +34,12 @@ public class ConverterService {
 		}
 		return auxList;
 	}
+	
+	public static Double modDouble(Double value) {
+		if (value < 0) {
+			return  value * -1;
+		}else {
+			return value;
+		}
+	}
 }
